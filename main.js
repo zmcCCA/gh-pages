@@ -1,31 +1,4 @@
-var newItemCounter = 1;
-var ourList = document.getElementById('our-list');
-var btn = document.getElementById('btn');
-var ourHeadline = document.getElementById('our-headline');
-var listItems = document.getElementById('our-list').getElementsByTagName('li');
-
-ourList.addEventListener("click", activateItem);
-
-
-function activateItem(e) {
-	if (e.target.nodeName == 'LI') {
-		ourHeadline.innerHTML = e.target.innerHTML;
-		for (var i = 0; i < e.target.parentNode.children.length; i++) {
-			e.target.parentNode.children[i].classList.remove('active');
-		}
-		e.target.classList.add('active');
-	}
-	
-}
-
-btn.addEventListener('click', createNewItem);
-
-function createNewItem(){
-	ourList.innerHTML += '<li>Guest ' + newItemCounter + '</li>';
-	newItemCounter++;
-}
-
-
+// slowing down her video
 var x = document.getElementById("myVideo");
 
 function getPlaySpeed() { 
@@ -35,3 +8,39 @@ function getPlaySpeed() {
 function setPlaySpeed() { 
     x.playbackRate = 0.2;
 } 
+
+
+function goSurf() {
+	var doYou = prompt('do you live near the ocean?');
+	var answer = doYou.toLowerCase();
+	if(answer === 'yes'){
+		alert('go surf then!');
+	}else{
+		alert('move to somwhere that you can surf dude!');
+	}
+}
+
+document.getElementById("clickOne").addEventListener("click", changeText);
+
+function changeText() {
+    document.getElementById("clickOne").innerHTML = "YOU CLICKED ME!";
+};
+
+document.getElementById('clickedTwo').addEventListener('click', doNotTouch);
+
+function doNotTouch(){
+	alert('Do not click the pictures!');
+};
+
+var d = new Date();
+document.getElementById("now").innerHTML = d;
+
+
+
+
+
+
+// this will show all@
+// for (movie of movies){
+// 	console.log(movie);
+// } 
